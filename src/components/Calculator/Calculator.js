@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./Calculator.css";
 
 class Calculator extends Component {
@@ -10,9 +10,6 @@ class Calculator extends Component {
       number2: 0,
       result: 0
     };
-
-    this.handleOnChange = this.handleOnChange.bind(this);
-    this.handleResult = this.handleResult.bind(this);
   }
 
   render() {
@@ -39,20 +36,20 @@ class Calculator extends Component {
     );
   }
 
-  handleOnChange(e) {
+  handleOnChange = e => {
     const {
       target: { value, name }
     } = e;
     this.setState({
       [name]: Number(value)
     });
-  }
+  };
 
-  handleResult(e) {
+  handleResult = e => {
     this.setState({
       result: this.state.number1 + this.state.number2
     });
-  }
+  };
 }
 
 export default Calculator;
